@@ -5,9 +5,12 @@ class Department(object):
         self.name = name
         self.supervisor = supervisor
         self.employee_count = employee_count
+        self.budget = 100000
 
     @property
     def name(self):
+        """ Gets the department name
+        """
         try:
             return self.__name
         except AttributeError:
@@ -15,6 +18,8 @@ class Department(object):
 
     @name.setter
     def name(self, val):
+        """ Sets the department name
+        """
         if not isinstance(val, str):
             raise TypeError('Please provide a string value for the supervisor')
 
@@ -25,6 +30,8 @@ class Department(object):
 
     @property
     def supervisor(self):
+        """ Gets the supervisor name
+        """
         try:
             return self.__supervisor
         except AttributeError:
@@ -32,6 +39,8 @@ class Department(object):
 
     @supervisor.setter
     def supervisor(self, val):
+        """ Sets the supervisor name
+        """
         if not isinstance(val, str):
             raise TypeError('Please provide a string value for the department name')
 
@@ -42,6 +51,8 @@ class Department(object):
 
     @property
     def employee_count(self):
+        """ Gets the number of employees
+        """
         try:
             return self.__employee_count
         except AttributeError:
@@ -49,6 +60,8 @@ class Department(object):
 
     @employee_count.setter
     def employee_count(self, val):
+        """ Sets the number of employees
+        """
         if not isinstance(val, int):
             raise TypeError('Please provide an integer value for employee count')
 
@@ -56,3 +69,15 @@ class Department(object):
             self.__employee_count = val
         else:
             raise ValueError("Please provide an integer for employee count")
+
+    def meet(self):
+        """ Prints meeting place
+        """
+
+        print("Everyone meet in {}'s office".format(self.supervisor))
+
+    def dept_budget(self):
+        """ Sets the base budget for each department
+        """
+
+        return self.budget

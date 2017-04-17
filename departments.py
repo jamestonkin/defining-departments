@@ -7,8 +7,11 @@ class HumanResources(Department):
     """
 
     def __init__(self, name, supervisor, employee_count):
+        """ Initial setup of the subclass
+        """
         super().__init__(name, supervisor, employee_count)
         self.policies = set()
+        self.budget = super().dept_budget() - 50000
 
     def add_policy(self, policy_name, policy_text):
         """Adds a policy, as a tuple, to the set of policies
@@ -20,6 +23,11 @@ class HumanResources(Department):
 
         self.policies.add((policy_name, policy_text))
 
+    def meet(self):
+        '''Prints a message identifying a meeting location specifically for the Human Resources department
+        '''
+        print("Everyone meet in the conference room #1.")
+
 
 
 class IT(Department):
@@ -29,8 +37,11 @@ class IT(Department):
     """
 
     def __init__(self, name, supervisor, employee_count):
+        """ Initial setup of the subclass
+        """
         super().__init__(name, supervisor, employee_count)
         self.licensed_programs = list()
+        self.budget = super().dept_budget() + 50000
 
     def add_licensed_program(self, software_name):
         """Adds a software program to the list of programs
@@ -41,6 +52,11 @@ class IT(Department):
 
         self.licensed_programs.append(software_name)
 
+    def meet(self):
+        '''Prints a message identifying a meeting location specifially for the IT department
+        '''
+        print("Everyone meet in the server room.")
+
 class Operations(Department):
 
     """ Class for representing the Operations department
@@ -49,8 +65,11 @@ class Operations(Department):
     """
 
     def __init__(self, name, supervisor, employee_count):
+        """ Initial setup of the subclass
+        """
         super().__init__(name, supervisor, employee_count)
         self.truck_count = 0
+        self.budget = super().dept_budget() + 100000
 
     def add_truck_count(self, number_of_trucks):
         """Adds the number of trucks in the operations department.
@@ -61,6 +80,11 @@ class Operations(Department):
 
         self.truck_count = number_of_trucks
 
+    def meet(self):
+        '''Prints a message identifying a meeting location specifially for the Operations department
+        '''
+        print("Everyone meet in the motor pool.")
+
 class Sales(Department):
 
     """ Class for representing the Sales department
@@ -69,8 +93,11 @@ class Sales(Department):
     """
 
     def __init__(self, name, supervisor, employee_count):
+        """ Initial setup of the subclass
+        """
         super().__init__(name, supervisor, employee_count)
         self.customer_count = 0
+        self.budget = super().dept_budget() - 75000
 
     def add_customer_count(self, number_of_customers):
         """Adds the number of customer accounts in the Sales department.
@@ -80,3 +107,8 @@ class Sales(Department):
         """
 
         self.customer_count = number_of_cusomers
+
+    def meet(self):
+        '''Prints a message identifying a meeting location specifially for the Sales department
+        '''
+        print("Everyone meet in conference room #2.")
