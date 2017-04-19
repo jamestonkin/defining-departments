@@ -1,6 +1,7 @@
 from bangazon import *
 from departments import *
 from employee import *
+from security import *
 
 op_dept = Operations("Ops Department", "Johnny Incharge", 10)
 op_dept.add_truck_count(9)
@@ -30,3 +31,6 @@ james_tonkin.eat()
 james_tonkin.eat(food="sandwich")
 james_tonkin.eat(companions=["Sam", "Dean", "Alice"])
 james_tonkin.eat("pizza", ["Sam", "Dean", "Alice"])
+print("-----------------------------------")
+
+Network_Switch("Harambe", "Gorilla")
