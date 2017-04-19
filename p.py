@@ -23,6 +23,10 @@ print(it_dept.supervisor)
 print(it_dept.employee_count)
 it_dept.meet()
 print(it_dept.dept_budget())
+
+hr_dept = HumanResources("HR Department", "Tom Coughlin", 9)
+sales_dept = Sales("Sales Department", "Jimmy John", 15)
+
 print("-----------------------------------")
 
 james_tonkin = Employee("James", "Tonkin")
@@ -34,3 +38,37 @@ james_tonkin.eat("pizza", ["Sam", "Dean", "Alice"])
 print("-----------------------------------")
 
 Network_Switch("Harambe", "Gorilla")
+print("-----------------------------------")
+
+# Employees
+bill_murray = Employee("Bill", "Murray")
+john_candy = Employee("John", "Candy")
+gilda_radner = Employee("Gilda", "Radner")
+jane_curtain = Employee("Jane", "Curtain")
+dan_akroyd = Employee("Dan", "Akroyd")
+chevy_chase = Employee("Chevy", "Chase")
+eddie_murphy = Employee("Eddie", "Murphy")
+jim_belushi = Employee("Jim", "Belushi")
+
+# Add Emps to departments
+it_dept.add_employee(bill_murray)
+it_dept.add_employee(john_candy)
+op_dept.add_employee(gilda_radner)
+op_dept.add_employee(dan_akroyd)
+hr_dept.add_employee(jane_curtain)
+hr_dept.add_employee(chevy_chase)
+sales_dept.add_employee(eddie_murphy)
+sales_dept.add_employee(jim_belushi)
+
+print("{}:".format(hr_dept.name))
+hr_dept.get_employees()
+print()
+print("{}:".format(it_dept.name))
+it_dept.get_employees()
+print()
+print("{}:".format(op_dept.name))
+op_dept.get_employees()
+print()
+print("{}:".format(sales_dept.name))
+sales_dept.get_employees()
+print()

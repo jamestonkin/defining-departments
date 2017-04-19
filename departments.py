@@ -1,4 +1,6 @@
 from bangazon import *
+from security import *
+from employee import *
 
 class HumanResources(Department):
     """Class for representing Human Resources department

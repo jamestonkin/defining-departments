@@ -6,6 +6,7 @@ class Department(object):
         self.supervisor = supervisor
         self.employee_count = employee_count
         self.budget = 100000
+        self.employees = set()
 
     @property
     def name(self):
@@ -81,3 +82,15 @@ class Department(object):
         """
 
         return self.budget
+
+    def add_employee(self, employee):
+        self.employees.add(employee)
+        return self.employees
+
+    def remove_employee(self, employee):
+        self.employees.remove(employee)
+        return self.employess
+
+    def get_employees(self):
+        for employee in self.employees:
+            print(employee.full_name)

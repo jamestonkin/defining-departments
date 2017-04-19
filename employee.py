@@ -1,6 +1,9 @@
 import random
+from departments import *
+from bangazon import *
+from security import *
 
-class Employee(object):
+class Employee(Department):
     """Parent class for employees
 
     Methods: __init__, eat
